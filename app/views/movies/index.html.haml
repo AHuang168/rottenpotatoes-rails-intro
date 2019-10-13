@@ -12,7 +12,7 @@
   %thead
     %tr
       %th{:class=>('title' == @selected)?'hilite':""}= link_to "Movie Title", {:sort => "title"}, :id=> "title_header" 
-      %th{:class=>('rating' == @selected)?'hilite':""}= link_to "Rating", {:sort => "rating"}, :id=> "rating_header" 
+      %th Rating
       %th{:class=>('release_date' == @selected)?'hilite':""}= link_to "Release Date", {:sort => "release_date"}, :id=> "release_date_header"
       %th More Info
   %tbody
