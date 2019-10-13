@@ -21,10 +21,10 @@ class MoviesController < ApplicationController
 
       session[:ratings] = params[:ratings]
       session[:sort] = params[:sort]
-    elsif params[:ratings] != session[:ratings] || params[:sort] != session[:sort]
-      session[:ratings] = params[:ratings]
-      session[:sort] = params[:sort]
-      @movies = Movie.filter(session[:ratings])
+    # elsif params[:ratings] != session[:ratings] || params[:sort] != session[:sort]
+    #   session[:ratings] = params[:ratings]
+    #   session[:sort] = params[:sort]
+    #   @movies = Movie.filter(session[:ratings])
 
     end
   end
