@@ -5,15 +5,15 @@
   Include:
   - @all_ratings.each do |rating|
     = rating
-    = check_box_tag "ratings[#{rating}]",  1, @selected.include?("#{rating}")
+    = check_box_tag "ratings[#{rating}]", 1, @tag.include?(rating), :id => "ratings_#{rating}"
   = submit_tag 'Refresh', :class => 'btn btn-primary'
 
 %table#movies.table.table-striped.col-md-12
   %thead
     %tr
-      %th{:class=>('title' == @sort)?'hilite p-3 mb-2 bg-warning text-dark':""}= link_to "Movie Title", :sort => 'title'
-      %th Rating
-      %th{:class=>('release_date' == @sort)?'hilite p-3 mb-2 bg-warning text-dark':""}= link_to "Release Date", :sort => 'release_date'
+      %th{:class=>('title' == @selected)?'hilite':""}= link_to "Movie Title", {:sort => "title"}, :id=> "title_header" 
+      %th{:class=>('rating' == @selected)?'hilite':""}= link_to "Rating", {:sort => "rating"}, :id=> "rating_header" 
+      %th{:class=>('release_date' == @selected)?'hilite':""}= link_to "Release Date", {:sort => "release_date"}, :id=> "release_date_header"
       %th More Info
   %tbody
     - @movies.each do |movie|
